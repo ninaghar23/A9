@@ -1,82 +1,44 @@
 #include <iostream>
 #include "SimpleArray.h"
 
-/*template<typename T>
-class SimpleArray
-{
-public:
-    SimpleArray(int s)  {
-        arraySize = s;
-        arrayStore = new T [arraySize];
-    }
-    ~SimpleArray();
-    T &operator[](int i);
-    bool setArrayBounds(int i);
-private:
-    bool growStorage(int argArraySize);
-    T *arrayStore;
-    int arraySize;
 
-};
-T &operator[](int i){if i>=0 && i<arraySize){
-        try{
-            if i>=0 && i<arraySize){
-                return arrayStore[i];
-            }
-            else {
-                throw 20
-            }
-        }
-    }
-        catch(int e){ cout<< "invalid index";}*/
 
 int main() {
-    //std::cout << "Hello, World!" << std::endl;
-    // instantiate int_array object of class array<int> with size 2
     SimpleArray< int, 2 > int_array;
-// set value to a first element
-// call to array class member function to set array elements
-    int_array.setArray(0,3);
-// set value to a second element
-// NOTE: any attempt to set float to an int array will be translated to int value
-    //int_array.setArray(1,3.4);
-
-// call to array class member function to display array elements
-    int_array.getArray();
+    int_array [1] = 0;
+    cout << "2nd element of array is " << int_array[1]<<endl;
     try {
         int_array[7] = 13;
-        int x = int_array[6];
+
+    }
+    catch (std::runtime_error &e){
+        cout<< e.what() << endl;
+    }
+    SimpleArray< float, 3 > float_array;
+
+    float_array [2] = 0.9;
+    cout << "3rd element of array is " << float_array[1]<<endl;
+    try {
+        float_array[7] = 13;
+
+    }
+    catch (std::runtime_error &e){
+        cout<< e.what() <<endl;
+    }
+
+    SimpleArray< char, 5 > char_array;
+
+    char_array [3] = 'L';
+    cout << "4th element of array is " << char_array[3]<<endl;
+    try {
+        float_array[7] = 13;
+
     }
     catch (std::runtime_error &e){
         cout<< e.what();
     }
-// instantiate float_array object of class array<float> with size 3
-    SimpleArray< float, 3 > float_array;
 
-// set value to a first element
-// call to array class member function to set array elements
-    float_array.setArray(0,3.4);
-// set value to a second element
-    float_array.setArray(1,2.8);
 
-// call to array class member function to display array elements
-    float_array.getArray();
-    float_array[4];
-// instantiate float_array object of class array<char> with size 5
-    SimpleArray< char, 5 > char_array;
 
-// set value to a first element
-// call to array class member function to set array elements
-    char_array.setArray(0,'H');
-// set value to a other array elements
-    char_array.setArray(1,'E');
-    char_array.setArray(2,'L');
-    char_array.setArray(3,'L');
-    char_array.setArray(4,'O');
-
-    char_array.getArray();
-    char_array[10];
-
-    return 0;
     return 0;
 }
