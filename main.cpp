@@ -33,7 +33,7 @@ T &operator[](int i){if i>=0 && i<arraySize){
 int main() {
     //std::cout << "Hello, World!" << std::endl;
     // instantiate int_array object of class array<int> with size 2
-    SimpleArray< int > int_array(2);
+    SimpleArray< int, 2 > int_array;
 // set value to a first element
 // call to array class member function to set array elements
     int_array.setArray(0,3);
@@ -43,10 +43,15 @@ int main() {
 
 // call to array class member function to display array elements
     int_array.getArray();
-    int_array[6];
-
+    try {
+        int_array[7] = 13;
+        int x = int_array[6];
+    }
+    catch (std::runtime_error &e){
+        cout<< e.what();
+    }
 // instantiate float_array object of class array<float> with size 3
-    SimpleArray< float > float_array(3);
+    SimpleArray< float, 3 > float_array;
 
 // set value to a first element
 // call to array class member function to set array elements
@@ -58,7 +63,7 @@ int main() {
     float_array.getArray();
     float_array[4];
 // instantiate float_array object of class array<char> with size 5
-    SimpleArray< char > char_array(5);
+    SimpleArray< char, 5 > char_array;
 
 // set value to a first element
 // call to array class member function to set array elements
