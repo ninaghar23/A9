@@ -68,24 +68,24 @@ int main() {
                             for (char item6 : number[5]){
                                 for (char item7 : number[6]){
                                     for (char item8 : number[7]){
-                                        outWord << "this is a combo: " << item << item2 << item3 << item4 << item5 << item6 << item7 << item8 << endl;
+                                        outWord << " " << item << item2 << item3 << item4 << item5 << item6 << item7 << item8 << endl;
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+
+
+                }
+
             }
-        }
-        }
-
-        }
-
-        }
-
-
-        }
-
-        }
 
 
         }
     }
-        outWord.close();
+    outWord.close();
 
 
     ifstream myfile;
