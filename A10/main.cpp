@@ -21,6 +21,9 @@ vector<char> v9 = {'w','x','y', 'z'};
 vector<vector<char>> number;
 int main() {
 
+    ofstream outWord;
+    outWord.open("test.txt");
+
     for (char p : phone){
         int i = p - '0';
 
@@ -57,21 +60,44 @@ int main() {
         }
     }
     for (vector<char> temp : number){
-        for (char temp2 : temp){
-            cout << temp2 << endl;
+        for (char item : number[0]) {
+            for (char item2 : number[1]) {
+                for (char item3 : number[2]){
+                    for (char item4 : number[3]){
+                        for (char item5 : number[4]){
+                            for (char item6 : number[5]){
+                                for (char item7 : number[6]){
+                                    for (char item8 : number[7]){
+                                        outWord << "this is a combo: " << item << item2 << item3 << item4 << item5 << item6 << item7 << item8 << endl;
+            }
+        }
+        }
+
+        }
+
+        }
+
+
+        }
+
+        }
+
+
         }
     }
-
-   ofstream outWord;
-    outWord.open("test.txt");
-
-
-        outWord << "This is a line.\n";
-        outWord << "This is another line.\n";
         outWord.close();
 
 
+    ifstream myfile;
+    myfile.open("test.txt");
+    string line;
 
+    if(myfile.is_open()){
+        while(getline(myfile, line)){
+            cout << line << '\n';
+        }
+        myfile.close();
+    }
 
 
 
